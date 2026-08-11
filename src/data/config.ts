@@ -1,4 +1,5 @@
 import { PersonalConfig, EducationItem, CertificationItem } from '../types';
+import profileImg from '../assets/profile.jpg';
 
 export const personalConfig: PersonalConfig = {
   name: "Mallanagowda P",
@@ -13,7 +14,7 @@ export const personalConfig: PersonalConfig = {
   linkedin: "https://www.linkedin.com/in/mallanagowda-p-9236a32ba/",
   github: "https://github.com/Mallanagowda63",
   resumePdfUrl: "RESUME_PDF_URL",
-  profileImage: "/profile.jpg",
+  profileImage: profileImg,
   githubProfileUrl: "https://github.com/Mallanagowda63"
 };
 
