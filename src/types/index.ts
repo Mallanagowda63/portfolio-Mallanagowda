@@ -37,7 +37,11 @@ export interface ProjectItem {
   liveDemoUrl?: string;
   githubUrl?: string;
   architectureUrl?: string;
+  apkUrl?: string;
   statusBadge?: string;
+  highlight?: boolean;
+  category?: string;
+  screenshots?: { src: string; caption: string }[];
   
   // Modal detail content
   overview: string;

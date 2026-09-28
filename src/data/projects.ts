@@ -1,9 +1,70 @@
 import { ProjectItem } from '../types';
+import stickerHome from '../assets/sticker-lab/home.jpg';
+import stickerChoose from '../assets/sticker-lab/choose-photo.jpg';
+import stickerCrop from '../assets/sticker-lab/crop.jpg';
+import stickerText from '../assets/sticker-lab/add-text.jpg';
+import stickerResult from '../assets/sticker-lab/result.jpg';
 
 export const projectsData: ProjectItem[] = [
   {
-    id: "devorbit",
+    id: "sticker-lab",
     number: "01",
+    title: "Sticker Lab",
+    subtitle: "Offline AI Sticker Maker for Android",
+    statusBadge: "NEW",
+    highlight: true,
+    category: "MOBILE APP · ON-DEVICE AI",
+    description: "An Android app that turns any photo into a sticker. It removes the background automatically with on-device AI, then lets you crop, rotate and add styled text. 100% offline, so photos never leave the phone.",
+    features: [
+      "Automatic background removal with on-device ML (Google ML Kit Subject Segmentation)",
+      "Capture from camera or pick from gallery",
+      "Crop with Original, Square, 4x3, 3x2 and 16x9 ratios, plus rotate",
+      "Text captions with custom fonts (Bangers, Marker, Pacifico), 12 colours and sizing",
+      "Auto white sticker outline and a personal My Stickers library",
+      "Fully offline and privacy-first, with no uploads or servers"
+    ],
+    techStack: ["Flutter", "Dart", "Google ML Kit", "Kotlin", "Android", "Material 3"],
+    projectFocus: "Built a complete offline mobile app, from camera and gallery input and on-device AI segmentation to an image editing pipeline, local sticker storage and a polished Material 3 dark UI.",
+    apkUrl: "./Sticker%20Maker.apk",
+    screenshots: [
+      { src: stickerHome, caption: "Home" },
+      { src: stickerChoose, caption: "Choose a photo" },
+      { src: stickerCrop, caption: "Background removed + crop" },
+      { src: stickerText, caption: "Add styled text" },
+      { src: stickerResult, caption: "Finished sticker" }
+    ],
+
+    // Modal Details
+    overview: "Sticker Lab is a Flutter Android app that turns everyday photos into shareable stickers. The user picks or takes a photo, the app isolates the subject with on-device machine learning, and an editor adds crop, rotation, text captions and a white sticker border.",
+    problem: "Most sticker and background-removal apps upload personal photos to cloud servers, need an internet connection, and bury the editing flow behind ads and sign-ups.",
+    solution: "Ran subject segmentation entirely on the device with Google ML Kit, so the whole create, cut out, edit and save flow works offline in a few taps, and photos never leave the phone.",
+    architectureFlow: [
+      { label: "Camera / Gallery", sublabel: "Photo Input", type: "client" },
+      { label: "Flutter UI", sublabel: "Dart + Material 3", type: "client" },
+      { label: "ML Kit Segmentation", sublabel: "On-Device Subject Cut-out", type: "service" },
+      { label: "Sticker Editor", sublabel: "Crop · Rotate · Text · Outline", type: "service" },
+      { label: "Local Storage", sublabel: "My Stickers Library", type: "db" }
+    ],
+    contribution: [
+      "Designed and built the full app in Flutter, from the home screen to photo selection, editing and the saved sticker library.",
+      "Integrated Google ML Kit Subject Segmentation through Android platform code for offline background removal.",
+      "Built the editing tools: aspect-ratio crop, rotation, and a text layer with custom fonts, colours and sizes.",
+      "Generated the white outline around the cut-out subject to give it a real sticker look.",
+      "Packaged and released the app as an installable Android APK."
+    ],
+    challenges: [
+      "Getting clean subject edges from on-device segmentation without any cloud processing.",
+      "Keeping large photo processing fast and memory-efficient on mid-range Android phones.",
+      "Tracing a smooth, even outline around irregular subject shapes."
+    ],
+    outcome: [
+      "Released a working Android APK that creates stickers fully offline.",
+      "Delivered a privacy-first experience where no photo is ever uploaded."
+    ]
+  },
+  {
+    id: "devorbit",
+    number: "02",
     title: "DevOrbit",
     subtitle: "Online Coding Practice & Assessment Platform",
     description: "A full-stack coding platform designed for colleges and students to practice programming, conduct assessments, and manage coding competitions.",
@@ -53,7 +114,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "aws-cloud-security",
-    number: "02",
+    number: "03",
     title: "AWS Cloud Security & Monitoring",
     subtitle: "Cloud Infrastructure Security & Audit Framework",
     description: "A cloud engineering and security project focused on auditing AWS cloud resources, automated security monitoring, log aggregation, and security posture enforcement.",
@@ -96,7 +157,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "dhannya",
-    number: "03",
+    number: "04",
     title: "Dhannya",
     subtitle: "Freelance Organic & Custom Masala E-Commerce Platform",
     description: "A production freelance full-stack e-commerce web application built for Dhannya Custom & Organic Masala Store, enabling customers to browse organic spices, customize masala orders, and manage shopping carts.",
@@ -140,7 +201,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "local-ai",
-    number: "04",
+    number: "05",
     title: "LocalAI",
     subtitle: "Privacy-First Local AI Assistant & LLM Platform",
     statusBadge: "IN PROGRESS",
@@ -184,7 +245,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "influencer-hub",
-    number: "05",
+    number: "06",
     title: "Influencer Hub",
     subtitle: "Micro-Influencer Collaboration & Campaign Management Platform",
     description: "A scalable influencer collaboration platform enabling businesses to discover micro-influencers based on niche, engagement metrics, and audience reach.",
@@ -225,7 +286,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "udm-tms",
-    number: "06",
+    number: "07",
     title: "UDM & TMS (Indian Railways)",
     subtitle: "Railway Ticket & User Management System",
     description: "A full-stack railway ticket and user management system developed using React Native and Node.js with RESTful API integration.",
@@ -265,7 +326,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "project-idea-hub",
-    number: "07",
+    number: "08",
     title: "Project Idea Hub",
     subtitle: "Academic & Real-World Project Discovery Platform",
     description: "A platform helping students discover innovative academic and real-world project ideas using recommendation algorithms and category-based filtering systems.",
@@ -305,7 +366,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "matchmaking-app",
-    number: "08",
+    number: "09",
     title: "Real-Time Matchmaking Mobile App",
     subtitle: "Social Networking Mobile Application",
     description: "A real-time social networking mobile application built with React Native, featuring Firebase authentication, mobile-first UI components, and secure profile management.",

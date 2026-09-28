@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { projectsData } from '../data/projects';
 import { ProjectItem } from '../types';
 import { ProjectModal } from './ProjectModal';
-import { ExternalLink, Github, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight, CheckCircle2, Download, Star } from 'lucide-react';
 
 export const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
@@ -37,7 +37,11 @@ export const Projects: React.FC = () => {
           {projectsData.map((project, index) => (
             <motion.div
               key={project.id}
-              className="glass-card glass-card-hover rounded-2xl p-6 sm:p-7 border border-slate-800 flex flex-col justify-between group relative overflow-hidden"
+              className={`glass-card glass-card-hover rounded-2xl p-6 sm:p-7 border flex flex-col justify-between group relative overflow-hidden ${
+                project.highlight
+                  ? 'md:col-span-2 border-violet-500/40 shadow-lg shadow-violet-500/10'
+                  : 'border-slate-800'
+              }`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -53,6 +57,12 @@ export const Projects: React.FC = () => {
                     <span className="font-mono text-xs font-extrabold text-cyan-400 px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20">
                       PROJECT {project.number}
                     </span>
+                    {project.highlight && (
+                      <span className="px-2.5 py-0.5 rounded-full bg-violet-500/15 border border-violet-500/40 text-violet-300 text-[10px] font-mono font-bold tracking-wider flex items-center gap-1">
+                        <Star className="w-3 h-3 fill-violet-300" />
+                        HIGHLIGHT
+                      </span>
+                    )}
                     {project.statusBadge && (
                       <span className="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[10px] font-mono font-bold tracking-wider animate-pulse flex items-center gap-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
@@ -60,7 +70,7 @@ export const Projects: React.FC = () => {
                       </span>
                     )}
                   </div>
-                  <span className="text-[11px] font-mono text-slate-500">FULL-STACK & CLOUD</span>
+                  <span className="text-[11px] font-mono text-slate-500">{project.category ?? 'FULL-STACK & CLOUD'}</span>
                 </div>
 
                 {/* Title & Subtitle */}
@@ -75,6 +85,23 @@ export const Projects: React.FC = () => {
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-5">
                   "{project.description}"
                 </p>
+
+                {/* App Screenshots */}
+                {project.screenshots && (
+                  <div className="flex gap-3 overflow-x-auto pb-3 mb-5 -mx-1 px-1 snap-x">
+                    {project.screenshots.map((shot) => (
+                      <figure key={shot.caption} className="flex-shrink-0 snap-start text-center">
+                        <img
+                          src={shot.src}
+                          alt={`${project.title} – ${shot.caption}`}
+                          loading="lazy"
+                          className="h-64 sm:h-72 w-auto rounded-xl border border-slate-800 bg-dark-950 object-contain"
+                        />
+                        <figcaption className="text-[10px] font-mono text-slate-500 mt-1.5">{shot.caption}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                )}
 
                 {/* Tech Stack Badges */}
                 <div className="flex flex-wrap gap-1.5 mb-6">
@@ -116,6 +143,16 @@ export const Projects: React.FC = () => {
                 </button>
 
                 <div className="flex items-center gap-2">
+                  {project.apkUrl && (
+                    <a
+                      href={project.apkUrl}
+                      download
+                      className="flex-1 flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-400 hover:to-fuchsia-400 text-white text-xs font-bold shadow-md shadow-violet-500/20 transition-colors"
+                    >
+                      <Download className="w-3 h-3" />
+                      <span>Download APK</span>
+                    </a>
+                  )}
                   {project.liveDemoUrl && (
                     <a
                       href={project.liveDemoUrl}

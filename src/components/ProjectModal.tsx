@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Github, Check, ArrowRight, Server, Database, Cpu, Layers, ShieldCheck, AlertTriangle } from 'lucide-react';
+import { X, ExternalLink, Github, Download, Smartphone, Check, ArrowRight, Server, Database, Cpu, Layers, ShieldCheck, AlertTriangle } from 'lucide-react';
 import { ProjectItem } from '../types';
 
 interface ProjectModalProps {
@@ -73,6 +73,16 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Links Row */}
           <div className="flex flex-wrap gap-3">
+            {project.apkUrl && (
+              <a
+                href={project.apkUrl}
+                download
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-bold text-xs shadow-md"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>Download APK (Android)</span>
+              </a>
+            )}
             {project.liveDemoUrl && (
               <a
                 href={project.liveDemoUrl}
@@ -96,6 +106,28 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               </a>
             )}
           </div>
+
+          {/* App Screenshots */}
+          {project.screenshots && (
+            <div className="bg-dark-950 rounded-xl p-5 border border-slate-800/90 space-y-3">
+              <h3 className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-2">
+                <Smartphone className="w-4 h-4" /> App Screenshots
+              </h3>
+              <div className="flex gap-3 overflow-x-auto pb-2 snap-x">
+                {project.screenshots.map((shot) => (
+                  <figure key={shot.caption} className="flex-shrink-0 snap-start text-center">
+                    <img
+                      src={shot.src}
+                      alt={`${project.title} – ${shot.caption}`}
+                      loading="lazy"
+                      className="h-80 w-auto rounded-xl border border-slate-800 object-contain"
+                    />
+                    <figcaption className="text-[10px] font-mono text-slate-500 mt-1.5">{shot.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Architecture Flow Diagram Box */}
           <div className="bg-dark-950 rounded-xl p-5 border border-slate-800/90 space-y-3">
