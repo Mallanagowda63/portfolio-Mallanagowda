@@ -6,7 +6,7 @@ import { Github, ExternalLink, FolderGit2 } from 'lucide-react';
 export const GitHubSection: React.FC = () => {
   const featuredRepos = [
     {
-      name: "Hackercit (CodeArena)",
+      name: "Hackercit (DevOrbit)",
       desc: "Full-Stack Online Coding Practice & Assessment Platform with Docker isolation.",
       lang: "TypeScript",
       langColor: "bg-blue-500",

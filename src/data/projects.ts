@@ -2,9 +2,9 @@ import { ProjectItem } from '../types';
 
 export const projectsData: ProjectItem[] = [
   {
-    id: "codearena",
+    id: "devorbit",
     number: "01",
-    title: "CodeArena",
+    title: "DevOrbit",
     subtitle: "Online Coding Practice & Assessment Platform",
     description: "A full-stack coding platform designed for colleges and students to practice programming, conduct assessments, and manage coding competitions.",
     features: [
@@ -19,11 +19,11 @@ export const projectsData: ProjectItem[] = [
     ],
     techStack: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Redis", "Docker", "JWT"],
     projectFocus: "Designed and developed a full-stack architecture covering frontend interfaces, backend APIs, authentication, database management, coding assessment workflows, and deployment infrastructure.",
-    liveDemoUrl: "http://65.2.70.70/",
+    liveDemoUrl: "https://hacke-b3gj.onrender.com",
     githubUrl: "https://github.com/Mallanagowda63/Hackercit",
     
     // Modal Details
-    overview: "CodeArena is an enterprise-grade competitive programming and coding assessment engine tailored for educational institutions and technical recruitment. It enables automated evaluation of submitted code across multiple programming languages within isolated sandbox containers.",
+    overview: "DevOrbit is an enterprise-grade competitive programming and coding assessment engine tailored for educational institutions and technical recruitment. It enables automated evaluation of submitted code across multiple programming languages within isolated sandbox containers.",
     problem: "Traditional academic coding evaluation processes suffer from manual grading latency, vulnerability to unhandled test cases, lack of real-time leaderboard sync during contests, and execution security risks when running untrusted student code.",
     solution: "Built an asynchronous, multi-tenant coding platform leveraging Docker sandbox environments for secure code evaluation, Redis for queue management & dynamic leaderboard caching, and JWT-based role authorization for granular privilege separation.",
     architectureFlow: [
@@ -46,7 +46,7 @@ export const projectsData: ProjectItem[] = [
       "Handling edge case runtime exceptions gracefully without blocking the main event loop."
     ],
     outcome: [
-      "Delivered a robust platform deployed live at 65.2.70.70 capable of handling concurrent contest submissions with sub-second feedback.",
+      "Delivered a robust platform deployed live at hacke-b3gj.onrender.com capable of handling concurrent contest submissions with sub-second feedback.",
       "Automated evaluation workflows, reducing grading overhead by 100% for mock campus placements.",
       "Successfully integrated certificate generation upon contest completion."
     ]
@@ -110,7 +110,7 @@ export const projectsData: ProjectItem[] = [
     ],
     techStack: ["React", "TypeScript", "Node.js", "Express.js", "Tailwind CSS", "REST APIs", "Render"],
     projectFocus: "Delivered a complete client product — from UI/UX design and stateful shopping components to backend API services and live production deployment on Render.",
-    liveDemoUrl: "https://dhannya-z9qk.onrender.com/",
+    liveDemoUrl: "https://dhanny.onrender.com/",
     githubUrl: "https://github.com/Mallanagowda63/Dhannya",
 
     // Modal Details
@@ -134,7 +134,7 @@ export const projectsData: ProjectItem[] = [
       "Ensuring clean cross-device layout consistency across smartphones, tablets, and laptops."
     ],
     outcome: [
-      "Successfully launched live web application at dhannya-z9qk.onrender.com.",
+      "Successfully launched live web application at dhanny.onrender.com.",
       "Provided client with a functional digital storefront to receive online orders."
     ]
   },

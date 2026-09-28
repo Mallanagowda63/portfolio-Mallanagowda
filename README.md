@@ -7,9 +7,9 @@ A modern, high-performance, responsive personal portfolio website for **Mallanag
 ![Portfolio Banner](public/profile.jpg)
 
 ## 🚀 Live Demo & Projects
-- **CodeArena (Hackercit)**: [http://65.2.70.70/](http://65.2.70.70/) | [GitHub Repo](https://github.com/Mallanagowda63/Hackercit)
+- **DevOrbit (Hackercit)**: [https://hacke-b3gj.onrender.com](https://hacke-b3gj.onrender.com) | [GitHub Repo](https://github.com/Mallanagowda63/Hackercit)
 - **AWS Cloud Security & Monitoring**: [GitHub Repo](https://github.com/Mallanagowda63/aws-cloud-security-monitoring)
-- **Dhannya (Organic Masala E-Commerce)**: [https://dhannya-z9qk.onrender.com/](https://dhannya-z9qk.onrender.com/) | [GitHub Repo](https://github.com/Mallanagowda63/Dhannya)
+- **Dhannya (Organic Masala E-Commerce)**: [https://dhanny.onrender.com/](https://dhanny.onrender.com/) | [GitHub Repo](https://github.com/Mallanagowda63/Dhannya)
 - **Influencer Hub**: [GitHub Repo](https://github.com/Mallanagowda63/influencer)
 - **LocalAI (In-Progress)**: Privacy-First Local AI Assistant & LLM Platform
 
