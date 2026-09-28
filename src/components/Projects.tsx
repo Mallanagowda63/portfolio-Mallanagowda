@@ -3,7 +3,88 @@ import { motion } from 'framer-motion';
 import { projectsData } from '../data/projects';
 import { ProjectItem } from '../types';
 import { ProjectModal } from './ProjectModal';
-import { ExternalLink, Github, ArrowRight, CheckCircle2, Download, Star } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight, CheckCircle2, Download, Star, Ambulance, Siren, MapPin, Clock, HeartPulse } from 'lucide-react';
+
+const ComingSoonCard: React.FC<{ project: ProjectItem; index: number }> = ({ project, index }) => (
+  <motion.div
+    className="md:col-span-2 relative overflow-hidden rounded-2xl border border-rose-500/40 bg-gradient-to-br from-rose-950/60 via-dark-900 to-dark-950 p-6 sm:p-8 shadow-lg shadow-rose-500/10"
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5, delay: index * 0.1 }}
+  >
+    {/* Ambient glows */}
+    <div className="absolute -top-24 -right-24 w-72 h-72 bg-rose-500/20 rounded-full blur-3xl pointer-events-none" />
+    <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
+
+    <div className="relative grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-center">
+      <div>
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-xs font-extrabold text-rose-300 px-3 py-1 rounded-md bg-rose-500/10 border border-rose-500/30">
+              PROJECT {project.number}
+            </span>
+            <span className="px-2.5 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/50 text-rose-300 text-[10px] font-mono font-bold tracking-wider flex items-center gap-1.5">
+              <span className="relative flex w-2 h-2">
+                <span className="absolute inline-flex w-full h-full rounded-full bg-rose-400 opacity-75 animate-ping" />
+                <span className="relative inline-flex w-2 h-2 rounded-full bg-rose-400" />
+              </span>
+              {project.statusBadge}
+            </span>
+          </div>
+          {project.category && (
+            <span className="text-[11px] font-mono text-slate-500">{project.category}</span>
+          )}
+        </div>
+
+        <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-100 flex items-center gap-3">
+          {project.title}
+          <Siren className="w-6 h-6 text-rose-400 animate-pulse" />
+        </h3>
+        <p className="text-xs font-mono text-rose-300 mb-3 mt-1">{project.subtitle}</p>
+        <p className="text-sm text-slate-300 leading-relaxed mb-6 max-w-2xl">{project.description}</p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+          {project.features.map((feat, i) => {
+            const Icon = [Ambulance, MapPin, Clock, HeartPulse][i % 4];
+            return (
+              <div key={feat} className="flex items-center gap-3 p-3 rounded-xl bg-dark-950/60 border border-rose-500/15">
+                <div className="p-1.5 rounded-lg bg-rose-500/10 border border-rose-500/20 flex-shrink-0">
+                  <Icon className="w-4 h-4 text-rose-400" />
+                </div>
+                <span className="text-xs text-slate-200">{feat}</span>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3">
+          <span
+            aria-disabled="true"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-500 to-red-600 text-white text-xs font-bold shadow-md shadow-rose-500/25 cursor-default"
+          >
+            <Clock className="w-3.5 h-3.5" />
+            Launching Soon
+          </span>
+          <span className="text-[11px] font-mono text-slate-500">Currently in development</span>
+        </div>
+      </div>
+
+      {/* Radar / ambulance visual */}
+      <div className="hidden lg:flex relative w-56 h-56 items-center justify-center mx-auto" aria-hidden="true">
+        <span className="absolute inset-0 rounded-full border border-rose-500/30 animate-ping [animation-duration:3s]" />
+        <span className="absolute inset-6 rounded-full border border-rose-500/30" />
+        <span className="absolute inset-14 rounded-full border border-rose-500/40" />
+        <span className="absolute inset-0 rounded-full bg-gradient-to-br from-rose-500/10 to-transparent" />
+        <div className="relative w-24 h-24 rounded-3xl bg-gradient-to-br from-rose-500 to-red-700 flex items-center justify-center shadow-xl shadow-rose-600/40">
+          <Ambulance className="w-12 h-12 text-white" />
+        </div>
+        <MapPin className="absolute top-6 right-8 w-5 h-5 text-rose-300 animate-bounce" />
+        <HeartPulse className="absolute bottom-8 left-6 w-5 h-5 text-rose-300/80" />
+      </div>
+    </div>
+  </motion.div>
+);
 
 export const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
@@ -34,7 +115,9 @@ export const Projects: React.FC = () => {
 
         {/* Projects Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projectsData.map((project, index) => (
+          {projectsData.map((project, index) => project.comingSoon ? (
+            <ComingSoonCard key={project.id} project={project} index={index} />
+          ) : (
             <motion.div
               key={project.id}
               className={`glass-card glass-card-hover rounded-2xl p-6 sm:p-7 border flex flex-col justify-between group relative overflow-hidden ${

@@ -63,8 +63,40 @@ export const projectsData: ProjectItem[] = [
     ]
   },
   {
-    id: "devorbit",
+    id: "ambulance-go",
     number: "02",
+    title: "Ambulance Go",
+    subtitle: "Emergency Ambulance Finder & Booking App",
+    statusBadge: "COMING SOON",
+    comingSoon: true,
+    category: "MOBILE APP · EMERGENCY CARE",
+    description: "A mobile app that helps people find and book the nearest ambulance in an emergency, in just a few taps, when every second counts.",
+    features: [
+      "One-tap emergency ambulance booking",
+      "Find the nearest available ambulances",
+      "Live ambulance location and arrival updates",
+      "Quick call and share location with emergency contacts"
+    ],
+    techStack: ["Mobile App", "GPS Location", "Maps", "Real-time Tracking"],
+    projectFocus: "Designing a fast, simple emergency flow that gets an ambulance to the patient with as few steps as possible.",
+
+    // Modal Details
+    overview: "Ambulance Go is an upcoming mobile app for emergencies. It finds nearby ambulances, lets the user book one instantly, and shows the ambulance on its way.",
+    problem: "In an emergency, people lose precious minutes searching for ambulance numbers, waiting on calls, and not knowing when help will arrive.",
+    solution: "A single app that locates the user, shows nearby ambulances, books one in a tap and tracks it live until it arrives.",
+    architectureFlow: [
+      { label: "Patient / Caller", sublabel: "Mobile App", type: "client" },
+      { label: "Location Service", sublabel: "GPS + Maps", type: "service" },
+      { label: "Booking API", sublabel: "Dispatch & Matching", type: "api" },
+      { label: "Ambulance Driver", sublabel: "Live Tracking", type: "client" }
+    ],
+    contribution: [],
+    challenges: [],
+    outcome: []
+  },
+  {
+    id: "devorbit",
+    number: "03",
     title: "DevOrbit",
     subtitle: "Online Coding Practice & Assessment Platform",
     description: "A full-stack coding platform designed for colleges and students to practice programming, conduct assessments, and manage coding competitions.",
@@ -114,7 +146,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "aws-cloud-security",
-    number: "03",
+    number: "04",
     title: "AWS Cloud Security & Monitoring",
     subtitle: "Cloud Infrastructure Security & Audit Framework",
     description: "A cloud engineering and security project focused on auditing AWS cloud resources, automated security monitoring, log aggregation, and security posture enforcement.",
@@ -157,7 +189,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "dhannya",
-    number: "04",
+    number: "05",
     title: "Dhannya",
     subtitle: "Freelance Organic & Custom Masala E-Commerce Platform",
     description: "A production freelance full-stack e-commerce web application built for Dhannya Custom & Organic Masala Store, enabling customers to browse organic spices, customize masala orders, and manage shopping carts.",
@@ -201,7 +233,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "local-ai",
-    number: "05",
+    number: "06",
     title: "LocalAI",
     subtitle: "Privacy-First Local AI Assistant & LLM Platform",
     statusBadge: "IN PROGRESS",
@@ -245,7 +277,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "influencer-hub",
-    number: "06",
+    number: "07",
     title: "Influencer Hub",
     subtitle: "Micro-Influencer Collaboration & Campaign Management Platform",
     description: "A scalable influencer collaboration platform enabling businesses to discover micro-influencers based on niche, engagement metrics, and audience reach.",
@@ -286,7 +318,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "udm-tms",
-    number: "07",
+    number: "08",
     title: "UDM & TMS (Indian Railways)",
     subtitle: "Railway Ticket & User Management System",
     description: "A full-stack railway ticket and user management system developed using React Native and Node.js with RESTful API integration.",
@@ -326,7 +358,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "project-idea-hub",
-    number: "08",
+    number: "09",
     title: "Project Idea Hub",
     subtitle: "Academic & Real-World Project Discovery Platform",
     description: "A platform helping students discover innovative academic and real-world project ideas using recommendation algorithms and category-based filtering systems.",
@@ -366,7 +398,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "matchmaking-app",
-    number: "09",
+    number: "10",
     title: "Real-Time Matchmaking Mobile App",
     subtitle: "Social Networking Mobile Application",
     description: "A real-time social networking mobile application built with React Native, featuring Firebase authentication, mobile-first UI components, and secure profile management.",

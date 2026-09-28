@@ -40,6 +40,7 @@ export interface ProjectItem {
   apkUrl?: string;
   statusBadge?: string;
   highlight?: boolean;
+  comingSoon?: boolean;
   category?: string;
   screenshots?: { src: string; caption: string }[];
   
