@@ -13,7 +13,7 @@ export const personalConfig: PersonalConfig = {
   location: "Bangalore, India",
   linkedin: "https://www.linkedin.com/in/mallanagowda-p-9236a32ba/",
   github: "https://github.com/Mallanagowda63",
-  resumePdfUrl: "RESUME_PDF_URL",
+  resumePdfUrl: "./resume.pdf",
   profileImage: profileImg,
   githubProfileUrl: "https://github.com/Mallanagowda63"
 };
